@@ -1,0 +1,8 @@
+Mar  7 10:31:24 192.168.18.109 lightdm: pam_unix(lightdm:session): session opened for user e3913-2014 by (uid=0)
+Mar  7 13:46:17 192.168.18.109 lightdm: pam_unix(lightdm:session): session closed for user e3913-2014
+Dec 19 09:41:57 192.168.18.121 lightdm: pam_unix(lightdm:session): session opened for user pr0891-2016 by (uid=0)
+Dec 19 09:43:00 192.168.18.123 lightdm: pam_unix(lightdm:session): session opened for user  pr7632-2016 by (uid=0)
+Dec 19 09:43:04 192.168.18.115 lightdm: pam_unix(lightdm:session): session opened for user pr3489-2016 by (uid=0)
+Dec 19 12:35:17 192.168.18.115 lightdm: pam_unix(lightdm:session): session closed for user pr3489-2016
+Dec 19 12:44:10 192.168.18.123 lightdm: pam_unix(lightdm:session): session closed for user  pr7632-2016
+Dec 19 12:45:29 192.168.18.121 lightdm: pam_unix(lightdm:session): session closed for user pr0891-2016
