@@ -1,0 +1,16 @@
+acs_student_attendance 1.0.1 (January 6, 2017)
+==============================================
+
+Bugfixes
+--------
+
+    * Prevented the `StudentAttendanceAnalysis` class from updating the
+      `StudentAuthLogParser.log_transformation_pipeline` list directly, as any
+      such changes would then carry over to all future `StudentAuthLogParser`
+      instances.
+
+
+acs_student_attendance 1.0.0 (December 30, 2016)
+================================================
+
+    * Initial release.
