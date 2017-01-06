@@ -120,7 +120,8 @@ class StudentAttendanceAnalysis(object):
             self.extra_log_transformation_pipeline = []
             self.log_parser.log_transformation_pipeline = override_log_transformation_pipeline
 
-        self.log_parser.log_transformation_pipeline.extend(self.extra_log_transformation_pipeline)
+        new_pipeline = self.log_parser.log_transformation_pipeline + self.extra_log_transformation_pipeline
+        self.log_parser.log_transformation_pipeline = new_pipeline
 
         someone_needs_semester_config = any(
             getattr(transformation, 'needs_semester_config', False)
