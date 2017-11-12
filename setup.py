@@ -5,7 +5,7 @@ setup(
     name='acs_student_attendance',
     version='1.0.1',
     url='https://bitbucket.org/petar/acs_student_attendance',
-    license='BSD', 
+    license='BSD',
     author='Petar Maric',
     author_email='petarmaric@uns.ac.rs',
     description='Console app and Python API for analyzing and reporting the '\
