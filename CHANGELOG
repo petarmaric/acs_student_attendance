@@ -1,3 +1,13 @@
+acs_student_attendance 1.0.3 (February 13, 2019)
+================================================
+
+Bugfixes
+--------
+
+    * Updated the `StudentAuthLogParser` class as our admins adopted a new date
+      format for the student auth log file.
+
+
 acs_student_attendance 1.0.2 (November 12, 2017)
 ================================================
 
