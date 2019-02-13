@@ -19,7 +19,7 @@ def replace_field(dictseq, key, replace_function):
     """
     for d in dictseq:
         d.update(replace_function(d.pop(key)))
-        yield d 
+        yield d
 
 def remove_fields(dictseq, keys):
     """
@@ -43,7 +43,7 @@ class StudentAuthLogParser(object):
         """
         Transforms the 'datetime' field to a proper `datetime` object
         """
-        return transform_field(parsed_log_lines, 'datetime', self._guess_datetime)
+        return transform_field(parsed_log_lines, 'datetime', self._parse_datetime)
 
     def _transform_computer_id_field(self, parsed_log_lines):
         """
@@ -64,23 +64,8 @@ class StudentAuthLogParser(object):
 
     ]
 
-    def __init__(self):
-        self._cached_dt_now = datetime.now()
-
-    def _guess_datetime(self, datetime_str):
-        dt = datetime.strptime(datetime_str, "%b %d %H:%M:%S")
-
-        # Unfortunately, the student auth log file format for some reason
-        # doesn't include the 'year' component within its 'datetime' field.
-        #
-        # Therefore, try and guess the 'year' by forcing it to the current year.
-        # If the resulting date is in the future switch it over to a previous
-        # year, as we should not be receiving logs from the future :)
-        dt = dt.replace(year=self._cached_dt_now.year)
-        if dt > self._cached_dt_now:
-            dt = dt.replace(year=self._cached_dt_now.year-1)
-
-        return dt
+    def _parse_datetime(self, datetime_str):
+        return datetime.strptime(datetime_str, "%Y-%m-%d %H:%M:%S")
 
     def _transform_log_lines(self, parsed_log_lines):
         for transformation in self.log_transformation_pipeline:
@@ -108,6 +93,6 @@ class StudentAuthLogParser(object):
         parsed_log_lines = self._gen_parsed_log_lines(log_lines)
         parsed_log_lines = self._transform_log_lines(parsed_log_lines)
         return parsed_log_lines
-    
+
     def __call__(self, log_lines):
         return self.parse(log_lines)
