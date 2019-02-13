@@ -3,3 +3,4 @@ syntax: glob
 dist/
 build/
 acs_student_attendance.egg-info/
+.vscode/
