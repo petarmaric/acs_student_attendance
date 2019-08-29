@@ -10,7 +10,7 @@ setup(
     author_email='petarmaric@uns.ac.rs',
     description='Console app and Python API for analyzing and reporting the '\
                 'lab attendance of our ACS students',
-    long_description=open('README').read(),
+    long_description=open('README.rst').read(),
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
