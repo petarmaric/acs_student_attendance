@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 setup(
     name='acs_student_attendance',
     version='1.0.3',
-    url='https://bitbucket.org/petar/acs_student_attendance',
+    url='https://github.com/petarmaric/acs_student_attendance',
     license='BSD',
     author='Petar Maric',
     author_email='petarmaric@uns.ac.rs',
